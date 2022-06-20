@@ -46,12 +46,8 @@ const getAllItems = async (id) => {
 const getItemsByDatesAndId = async (start, end, id) => {
   let newDateEnd;
 
-  if (start === end) {
-    var current = new Date(start);
-    newDateEnd = new Date(current.getTime() + 86400000);
-  } else {
-    newDateEnd = new Date(end);
-  }
+  const current = new Date(end);
+  newDateEnd = new Date(current.getTime() + 86400000);
 
   const newDateStart = new Date(start);
   const newStart = newDateStart.toISOString();
